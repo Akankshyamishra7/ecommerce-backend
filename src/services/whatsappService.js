@@ -1,5 +1,5 @@
 /**
- * WhatsApp Notification Service for EggKart by AP Enterprises
+ * WhatsApp Notification Service for AP Enterprises
  * Supports:
  * 1. Meta WhatsApp Cloud API (Official)
  * 2. Twilio WhatsApp API
@@ -47,7 +47,7 @@ const buildBuyerOrderMessage = (order) => {
       : `⏳ DUE on Delivery (₹${Number(order.totalAmount || 0).toLocaleString('en-IN')})`;
 
   return (
-    `🛒 *Order Confirmed! — EggKart by AP Enterprises*\n\n` +
+    `🛒 *Order Confirmed! — AP Enterprises*\n\n` +
     `Hello *${order.customerName || 'Wholesale Buyer'}*,\n` +
     `Thank you for your order! We have received your wholesale request and our warehouse team is preparing it.\n\n` +
     `📦 *Order ID:* #${orderId}\n` +
@@ -140,7 +140,7 @@ const buildOrderStatusUpdateMessage = (order, newStatus) => {
     `${statusDetail}\n\n` +
     `📦 *Order ID:* #${orderId}\n` +
     `💰 *Total Amount:* ₹${Number(order.totalAmount || 0).toLocaleString('en-IN')}\n\n` +
-    `Thank you,\n*EggKart by AP Enterprises*`
+    `Thank you,\n*AP Enterprises*`
   );
 };
 
