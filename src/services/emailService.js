@@ -15,12 +15,13 @@ export const createMailTransport = () => {
   const port = Number(env.smtp.port || (env.smtp.secure ? 465 : 587));
   const isSecure = port === 465;
 
+  const smtpPass = String(env.smtp.pass || '').replace(/\s+/g, '');
   const transportConfig = isGmail
     ? {
         service: 'gmail',
         auth: {
           user: env.smtp.user.trim(),
-          pass: env.smtp.pass.trim()
+          pass: smtpPass
         },
         connectionTimeout: 10000,
         greetingTimeout: 5000,
@@ -32,7 +33,7 @@ export const createMailTransport = () => {
         secure: isSecure,
         auth: {
           user: env.smtp.user.trim(),
-          pass: env.smtp.pass.trim()
+          pass: smtpPass
         },
         connectionTimeout: 10000,
         greetingTimeout: 5000,
