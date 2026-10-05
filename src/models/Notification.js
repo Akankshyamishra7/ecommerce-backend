@@ -36,8 +36,7 @@ const notificationSchema = new mongoose.Schema(
     },
     readAt: {
       type: Date,
-      default: null,
-      index: true
+      default: null
     }
   },
   { timestamps: true }
